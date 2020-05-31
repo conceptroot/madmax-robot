@@ -1,0 +1,12 @@
+# MOTORS PART. WheelBase
+# GPIO pins in raspberry pi, used to control 2 or 4 motors. 
+# To control one motor (or 2 motors in one direction) you will need 3 pins 
+# This program is for l298n motor driver. 
+motor_enabler_left: 13
+motor_in1_left: 19
+motor_in2_left: 26
+motor_enabler_right: 16
+motor_in3_right: 21
+motor_in4_right: 20
+motors_speed: 0.3 # initial speed of motors (0-1)
+# =================================================

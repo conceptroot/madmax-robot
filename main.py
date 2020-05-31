@@ -1,23 +1,23 @@
-from gpiozero import Robot
-from time import sleep
-robot= Robot(left=(19,26,13), right=(21,20,16))
-def scriptik(speed=0.3):
-    robot.forward(speed=speed)
-    sleep(0.5)
-    robot.stop()
-    sleep(1)
-    robot.backward(speed=speed)
-    sleep(0.5)
-    robot.stop()
-    sleep(3)
-    robot.right(speed=speed)
-    sleep(0.5)
-    robot.stop()
-    sleep(1)
-    robot.left(speed=speed)
-    sleep(0.5)
-    robot.stop()
-    print("finishing job")
+import threading
 
-if __name__ == "__main__":
-    scriptik()
+from robot.robot import MadmaxWheelbase, MadmaxSound
+from time import sleep
+
+from pydub import AudioSegment
+from pydub.playback import play
+
+wheels= MadmaxWheelbase()
+sounds = MadmaxSound()
+
+sounds.play_horn()
+wheels.forward()
+
+print(threading.active_count())
+for i in range(10):
+    sleep(0.3)
+    wheels.set_speed(i/10)
+    wheels.forward()
+
+wheels.stop()
+
+
