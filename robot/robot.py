@@ -31,3 +31,7 @@ class MadmaxSound():
     def play_horn(self):
         thread = threading.Thread(target = self._play_horn)
         thread.start()
+
+class MadmaxPixels():
+    def __init__(self):
+        pass
