@@ -1,12 +1,8 @@
 from gpiozero import Robot
-import yaml
 import threading
 from pydub import AudioSegment
 from pydub.playback import play
-
-with open('robot/settings.yaml') as f:
-    sets = yaml.safe_load(f)
-
+from robot.settings import sets
 
 class MadmaxWheelbase():
     def __init__(self):

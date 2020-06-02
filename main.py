@@ -1,15 +1,13 @@
 import threading
 
 from robot.robot import MadmaxWheelbase, MadmaxSound
+from robot.MadmaxStepper import MadmaxStepper
 from time import sleep
-
-from pydub import AudioSegment
-from pydub.playback import play
 
 wheels= MadmaxWheelbase()
 sounds = MadmaxSound()
 
-sounds.play_horn()
+# sounds.play_horn()
 wheels.forward()
 
 print(threading.active_count())
@@ -21,3 +19,5 @@ for i in range(10):
 wheels.stop()
 
 
+stepper_crusher = MadmaxStepper()
+stepper_crusher.rotate(360, True)

@@ -10,3 +10,12 @@ motor_in3_right: 21
 motor_in4_right: 20
 motors_speed: 0.3 # initial speed of motors (0-1)
 # =================================================
+
+# STEPPER MOTOR part. crusher lifting gear
+# This settings are for 28BYJ-48 5v stepper motor
+stepper_revolution_steps: 2038
+stepper_microsteps_in_one_step: 8
+stepper_enable_pin: 22
+stepper_step_pin: 17
+stepper_direction_pin: 27
+# =================================================
