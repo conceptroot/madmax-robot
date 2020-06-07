@@ -7,7 +7,7 @@ from time import sleep
 wheels= MadmaxWheelbase()
 sounds = MadmaxSound()
 
-# sounds.play_horn()
+sounds.play_horn()
 wheels.forward()
 
 print(threading.active_count())
