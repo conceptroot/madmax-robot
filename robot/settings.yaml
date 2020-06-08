@@ -18,4 +18,5 @@ stepper_microsteps_in_one_step: 8
 stepper_enable_pin: 22
 stepper_step_pin: 17
 stepper_direction_pin: 27
+stepper_speed: 0.0003 #it's a sleep duaration between half step. More duaration - less speed
 # =================================================

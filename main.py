@@ -10,6 +10,9 @@ sounds = MadmaxSound()
 
 sounds.play_horn()
 wheels.forward()
+stepper_crusher = MadmaxStepper()
+
+
 
 print(threading.active_count())
 for i in range(10):
@@ -20,5 +23,4 @@ for i in range(10):
 wheels.stop()
 
 
-stepper_crusher = MadmaxStepper()
 stepper_crusher.rotate(360, True)
