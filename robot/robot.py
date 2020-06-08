@@ -1,7 +1,5 @@
 from gpiozero import Robot
 import threading
-from pydub import AudioSegment
-from pydub.playback import play
 from robot.settings import sets
 
 class MadmaxWheelbase():
@@ -23,14 +21,7 @@ class MadmaxWheelbase():
     def set_speed(self, speed):
         self.speed = speed 
 
-class MadmaxSound():
-    def __init__(self):
-        self._horn_sound = AudioSegment.from_mp3('robot/sounds/horn.mp3')
-    def _play_horn(self):
-        play(self._horn_sound)
-    def play_horn(self):
-        thread = threading.Thread(target = self._play_horn)
-        thread.start()
+
 
 class MadmaxPixels():
     def __init__(self):

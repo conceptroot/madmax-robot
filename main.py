@@ -1,7 +1,8 @@
 import threading
 
-from robot.robot import MadmaxWheelbase, MadmaxSound
+from robot.robot import MadmaxWheelbase 
 from robot.MadmaxStepper import MadmaxStepper
+from robot.MadmaxSound import MadmaxSound
 from time import sleep
 
 wheels= MadmaxWheelbase()
