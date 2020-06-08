@@ -25,13 +25,30 @@ sounds = MadmaxSound()
 
 
 import RPi.GPIO as GPIO
-LEFT = 23
-RIGHT = 24
+LEFT = 24
+RIGHT = 23
 GPIO.setup([LEFT, RIGHT], GPIO.IN)
 
+def print_GPIO():
+    while True:
+        print("LEFT = ", GPIO.input(LEFT))
+        print("RIGHT = ", GPIO.input(RIGHT))
+        sleep(1)
 
+thread_GPIO = threading.Thread(target = print_GPIO)
+thread_GPIO.start()
 
-while True:
-    print("LEFT = ", GPIO.input(LEFT))
-    print("RIGHT = ", GPIO.input(RIGHT))
-    sleep(1)
+# while True:
+#     print("LEFT = ", GPIO.input(LEFT))
+#     print("RIGHT = ", GPIO.input(RIGHT))
+#     sleep(1)
+try:
+    while True:
+        if GPIO.input(RIGHT) and GPIO.input(LEFT):
+            wheels.forward()
+        else:
+            wheels.stop()
+        sleep (0.2)
+except KeyboardInterrupt:
+    print("zavershaem")
+    wheels.stop()
