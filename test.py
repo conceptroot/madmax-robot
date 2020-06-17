@@ -4,6 +4,7 @@ from robot.robot import *
 from robot.MadmaxStepper import MadmaxStepper
 from robot.MadmaxWheelbase import MadmaxWheelbase
 from robot.MadmaxSound import MadmaxSound
+from robot.MadmaxDistance import MadmaxDistance
 from time import sleep
 
 wheels= MadmaxWheelbase()
@@ -39,6 +40,10 @@ def print_GPIO():
 
 thread_GPIO = threading.Thread(target = print_GPIO)
 thread_GPIO.start()
+
+
+sence = MadmaxDistance()
+sence.run_distanse_speed_thread()
 
 # while True:
 #     print("LEFT = ", GPIO.input(LEFT))

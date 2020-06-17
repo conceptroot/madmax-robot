@@ -20,3 +20,8 @@ stepper_step_pin: 17
 stepper_direction_pin: 27
 stepper_speed: 0.0003 #it's a sleep duaration between half step. More duaration - less speed
 # =================================================
+
+# Distance ultrasound sensor
+# Uses 2 GPIOs for trigger and echo
+distance_trigger: 6
+distance_echo: 5

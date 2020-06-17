@@ -4,6 +4,7 @@
 3. Led Pixels (headlights)
 4. Stepper motor (crusher lifting gear)
 5. Infrared Obstacle Avoidance Sensor 
+6. Ultrasonic distance meter
 ## 1. Motors
 **Library:**
 gpiozero
@@ -49,3 +50,14 @@ RPi.GPIO
 **TODO**
 1. Add information about voltage divider. (voltage divider is necessary, beacouse IR sensor don't enough 3.3 volts or use logic shifter)
 2. 
+
+## 6. Ultrasonic distance meter
+**Libraries**
+gpiozero
+
+**Hardware:**
+[Ultrasonic distance meter](https://aliexpress.ru/item/32305665433.html?spm=a2g0o.productlist.0.0.f1b465e9WAay3y&algo_pvid=8d5d29fa-8d0a-4486-9ece-4ae13c8293fd&algo_expid=8d5d29fa-8d0a-4486-9ece-4ae13c8293fd-0&btsid=0b8b15ea15924240346753347e2b15&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
+2 rezistors for voltage divider(for example 1000 and 2000 om). (used to make 3.3 volts from echo pin of ultrasonic distance meter)
+
+**TODO**
+1. _set_speed should control speed of robot. 
