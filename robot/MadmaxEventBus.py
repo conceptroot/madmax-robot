@@ -6,13 +6,19 @@ class EventBus():
         self.__threads = []
         self.__sensors = []
 
-        
     def connect_sensor(self, sensor: object):
-        # sensor.get_data()
-        pass
+        sensor.set_callback(self.event_handler)
+        self.__sensors.append(sensor)
+        self.__create_tread(sensor)
 
-    def create_tread(self):
-        pass
+    def __create_tread(self, sensor):
+        thread = threading.Thread(target=sensor.run_stream)
+        thread.start()
+        self.__threads.append(thread)
 
-    def run_callback(self, callback_function, *args, **kwargs):
-        callback_function(*args, **kwargs)
+
+
+    def event_handler(self, *args, **kwargs):
+        print("Запущен ивент хендлер, тут будут обрабатыватся события от сенсоров")
+        print(f"Аргументы переданные в функцию: {args}")
+        pass

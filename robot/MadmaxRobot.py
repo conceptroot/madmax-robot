@@ -4,6 +4,7 @@ from robot.MadmaxDistance import MadmaxDistance
 from robot.MadmaxWheelbase import MadmaxWheelbase
 from robot.MadmaxStepper import MadmaxStepper
 from robot.MadmaxSound import MadmaxSound
+from robot.MadmaxEventBus import EventBus
 
 
 class MadmaxRobot(object):
@@ -21,12 +22,16 @@ class MadmaxRobot(object):
 
             
     def __init__(self):
+        self.core_event_bus = EventBus()
         self.component_front_distance = MadmaxDistance() 
+        self.core_event_bus.connect_sensor(self.component_front_distance)
         self.component_wheel_base = MadmaxWheelbase()
         self.component_crusher_stepper = MadmaxStepper()
         self.component_sound = MadmaxSound()
+
         self.robot_mode = self.get_robot_mode(0) 
         self.robot_speed = sets['motors_speed']
+        
     
     @staticmethod
     def get_robot_mode(number: int):
