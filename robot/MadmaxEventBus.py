@@ -21,4 +21,5 @@ class EventBus():
     def event_handler(self, *args, **kwargs):
         print("Запущен ивент хендлер, тут будут обрабатыватся события от сенсоров")
         print(f"Аргументы переданные в функцию: {args}")
+        print(f"Название сенсора: {kwargs}")
         pass

@@ -22,13 +22,19 @@ class MadmaxRobot(object):
 
             
     def __init__(self):
+        # Create event bus for all sensors
         self.core_event_bus = EventBus()
+        
+        # Connect all components (hardware that conected to robot) 
         self.component_front_distance = MadmaxDistance() 
-        self.core_event_bus.connect_sensor(self.component_front_distance)
         self.component_wheel_base = MadmaxWheelbase()
         self.component_crusher_stepper = MadmaxStepper()
         self.component_sound = MadmaxSound()
 
+        # Attach componets to event bus
+        self.core_event_bus.connect_sensor(self.component_front_distance)
+
+        # Set robot initial settings
         self.robot_mode = self.get_robot_mode(0) 
         self.robot_speed = sets['motors_speed']
         
