@@ -32,27 +32,23 @@ LEFT = 24
 RIGHT = 23
 GPIO.setup([LEFT, RIGHT], GPIO.IN)
 
-def print_GPIO():
-    while True:
-        print("LEFT = ", GPIO.input(LEFT))
-        print("RIGHT = ", GPIO.input(RIGHT))
-        sleep(1)
+# def print_GPIO():
+#     while True:
+#         print("LEFT = ", GPIO.input(LEFT))
+#         print("RIGHT = ", GPIO.input(RIGHT))
+#         sleep(1)
 
-thread_GPIO = threading.Thread(target = print_GPIO)
-thread_GPIO.start()
+# thread_GPIO = threading.Thread(target = print_GPIO)
+# thread_GPIO.start()
 
 
 sence = MadmaxDistance()
-sence.run_distanse_speed_thread()
+# sence.run_distanse_speed_thread()
 
-# while True:
-#     print("LEFT = ", GPIO.input(LEFT))
-#     print("RIGHT = ", GPIO.input(RIGHT))
-#     sleep(1)
 try:
     while True:
         if GPIO.input(RIGHT) and GPIO.input(LEFT):
-            wheels.forward()
+            wheels.forward(0.2)
         else:
             wheels.stop()
         sleep (0.2)
