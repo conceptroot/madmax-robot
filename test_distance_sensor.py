@@ -6,9 +6,6 @@ from colorama import Fore
 from rpi_lcd import LCD
 from time import sleep
 
-
-
-
 from robot.settings import sets
 
 colorama.init(autoreset=True)
