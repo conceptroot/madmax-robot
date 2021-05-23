@@ -5,6 +5,7 @@
 4. Stepper motor (crusher lifting gear)
 5. Infrared Obstacle Avoidance Sensor 
 6. Ultrasonic distance meter
+7. LCD 16x2 LCD screen. 
 ## 1. Motors
 **Library:**
 gpiozero
@@ -61,3 +62,10 @@ gpiozero
 
 **TODO**
 1. _set_speed should control speed of robot. 
+
+## 7. LCD 16x2 LCD screen. 
+**Libraries**
+rpi-lcd
+
+**Hardware:**
+[LCD 128x2 LCD screen](https://aliexpress.ru/item/32413056677.html?spm=a2g0o.productlist.0.0.14ad4bee5wrQS8&algo_pvid=5fffbfcd-6c0a-4b5c-a004-fccd3e6dfaca&algo_expid=5fffbfcd-6c0a-4b5c-a004-fccd3e6dfaca-0&btsid=0b8b15d416217670649746054edc50&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
